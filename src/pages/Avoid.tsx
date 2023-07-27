@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { solutionData } from '../content/solution'
 import Accordions from '../components/Accordions'
 

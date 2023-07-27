@@ -2,7 +2,7 @@ import './App.css'
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import Appbar from './components/Appbar'
 import Home from './pages/Home'
-import History from './pages/History'
+// import History from './pages/History'
 import Causes from './pages/Causes'
 import Precaution from './pages/Precaution'
 import Avoid from './pages/Avoid'
@@ -14,7 +14,7 @@ function App() {
    <Appbar/>
    <Routes>
     <Route path='/' element={<Home/>}/>
-    <Route path='/history' element={<History/>}/>
+    {/* <Route path='/history' element={<History/>}/> */}
     <Route path='/causes' element={<Causes/>}/>
     <Route path='/precaution' element={<Precaution/>}/>
     <Route path='/avoid' element={<Avoid/>}/>
