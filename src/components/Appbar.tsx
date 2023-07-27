@@ -32,7 +32,7 @@ function Appbar() {
             >
               Home
             </Link>
-            <Link
+            {/* <Link
               to="/history"
               style={{
                 textDecoration: "none",
@@ -42,7 +42,7 @@ function Appbar() {
               }}
             >
               History
-            </Link>
+            </Link> */}
             <Link
               to="/precaution"
               style={{
