@@ -17,7 +17,7 @@ function SearchCondition(props:locationProps) {
     <div className="container">
         <div className="row">
             <div className="col-md-6">
-            <InputGroup size="lg">
+            <InputGroup size="lg" style={{width:'257px',marginTop:'15px'}}>
         <InputGroup.Text id="inputGroup-sizing-lg">Latitude</InputGroup.Text>
         <Form.Control
           aria-label="Large"
@@ -27,8 +27,8 @@ function SearchCondition(props:locationProps) {
         />
       </InputGroup>
             </div>
-            <div className="col-md-6">
-            <InputGroup size="lg" >
+            <div className="col-md-6 ">
+            <InputGroup size="lg" style={{width:'257px',marginTop:'15px'}}>
         <InputGroup.Text id="inputGroup-sizing-lg">Longitude</InputGroup.Text>
         <Form.Control
           aria-label="Large"
