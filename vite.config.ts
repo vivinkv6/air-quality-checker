@@ -6,8 +6,8 @@ import { VitePWA } from "vite-plugin-pwa";
 export default defineConfig({
   plugins: [react(), VitePWA(),VitePWA({
          manifest: {
-          name: 'vite-react-ts-100',
-            short_name: 'vite-react-ts-100',
+          name: 'Air Quality Checker',
+            short_name: 'Air Checker',
             start_url: '/',
             display: 'standalone',
            background_color: '#ffffff',
