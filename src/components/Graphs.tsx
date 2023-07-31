@@ -57,7 +57,7 @@ function Graphs(props:locationProps) {
     <>
    <LineChart
    
-  width={360}
+  width={350}
   height={400}
   data={datas}
   margin={{ top: 5, right: 20, left: 10, bottom: 5 }}

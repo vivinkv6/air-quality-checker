@@ -2,6 +2,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
+import { NavbarContent } from "../content/NavbarContent";
 
 function Appbar() {
   return (
@@ -20,63 +21,25 @@ function Appbar() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <Link
-              to="/"
-              style={{
-                textDecoration: "none",
-                fontWeight: "500",
-                marginRight: "5px",
-                color: "white",
-              }}
-            >
-              Home
-            </Link>
-            {/* <Link
-              to="/history"
-              style={{
-                textDecoration: "none",
-                fontWeight: "500",
-                marginRight: "5px",
-                color: "white",
-              }}
-            >
-              History
-            </Link> */}
-            <Link
-              to="/precaution"
-              style={{
-                textDecoration: "none",
-                fontWeight: "500",
-                marginRight: "5px",
-                color: "white",
-              }}
-            >
-              Precaution
-            </Link>
-            <Link
-              to="/causes"
-              style={{
-                textDecoration: "none",
-                fontWeight: "500",
-                marginRight: "5px",
-                color: "white",
-              }}
-            >
-              Causes
-            </Link>
-            <Link
-              to="/avoid"
-              style={{
-                textDecoration: "none",
-                fontWeight: "500",
-                marginRight: "5px",
-                color: "white",
-              }}
-            >
-              Avoid
-            </Link>
-          </Nav>
+          {NavbarContent.map((value) => {
+            return (
+              <div key={value.id}>
+                <Nav className="me-auto">
+                  <Link
+                    to={value.url}
+                    style={{
+                      textDecoration: "none",
+                      fontWeight: "500",
+                      marginRight: "5px",
+                      color: "white",
+                    }}
+                  >
+                    {value.name}
+                  </Link>
+                </Nav>
+              </div>
+            );
+          })}
         </Navbar.Collapse>
       </Container>
     </Navbar>

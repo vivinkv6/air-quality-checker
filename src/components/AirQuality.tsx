@@ -1,31 +1,34 @@
 import { useState, useEffect } from "react";
 import CurrentCondition from "./CurrentCondition";
 import Graphs from "./Graphs";
-
+import { featureContent } from "../content/featureContent";
 import Loader from "./Loader";
+import SearchCondition from "./SearchCondition";
+import { language } from "../content/languages";
+import { malFeatureContent } from "../content/malayalam/featureContent";
 
 function AirQuality() {
-  const [latitude, setLatitude] = useState<number|undefined>(undefined);
-  const [longitude, setLongitude] = useState<number|undefined>(undefined);
+  const [latitude, setLatitude] = useState<number | undefined>(10.527642);
+  const [longitude, setLongitude] = useState<number | undefined>(76.214432);
 
-  const [day, setDay] = useState<number>();
-  const [month, setMonth] = useState<number>();
-  const [year, setYear] = useState<number>();
+ 
 
-  const [data, setData] = useState<{
-    co:number,
-    nh3: number,
-    no: number,
-    no2: number,
-    o3: number,
-    pm2_5:number,
-    pm10:number,
-    so2:number,
-  }|undefined>(undefined);
+  const [data, setData] = useState<
+    | {
+        co: number;
+        nh3: number;
+        no: number;
+        no2: number;
+        o3: number;
+        pm2_5: number;
+        pm10: number;
+        so2: number;
+      }
+    | undefined
+  >();
   const [loading, setLoading] = useState<boolean>(false);
-  const [aqi, setAqi] = useState<number|undefined>(undefined);
-  const[colour,setColour]=useState<string>('green')
-  let date = new Date();
+  const [aqi, setAqi] = useState<number | undefined>();
+  const [colour, setColour] = useState<string>();
 
   useEffect(() => {
     const getLocation = () => {
@@ -46,9 +49,7 @@ function AirQuality() {
       console.log(longitude);
     };
     getLocation();
-    setDay(date.getDate());
-    setMonth(date.getMonth());
-    setYear(date.getFullYear());
+
 
     //data fetching
 
@@ -64,48 +65,48 @@ function AirQuality() {
           setData(datas?.list[0]?.components);
           console.log(datas);
           console.log(datas.list[0].main.aqi);
-          
-          setAqi(datas?.list[0]?.main?.aqi)
+
+          setAqi(datas?.list[0]?.main?.aqi);
         })
         .catch((err) => console.log(`Server Issue: ${err.message}`));
       setLoading(false);
-      if(aqi == 1){
-        setColour('green')
+      if (aqi == 1) {
+        setColour("rgba(4, 99, 17, 0.74)");
       }
-      if(aqi == 2){
-        setColour('yellow')
+      if (aqi == 2) {
+        setColour("rgba(245, 227, 1, 0.68)");
       }
-      if(aqi == 3){
-        setColour('brown')
+      if (aqi == 3) {
+        setColour("rgba(190, 91, 49, 0.6)");
       }
-      if(aqi == 4){
-        setColour('orange')
+      if (aqi == 4) {
+        setColour("rgba(246, 166, 0, 0.47)");
       }
-      if(aqi == 5){
-        setColour('red')
+      if (aqi == 5) {
+        setColour("rgba(214, 32, 32, 0.65)");
       }
     };
     fetchData();
-    
-  }, [latitude,longitude]);
+  }, [latitude, longitude, colour]);
 
   return (
-    <div style={{backgroundColor:`${colour}`}}>
-      <div className="container" >
-        <div className="row" >
+    <div style={{ backgroundColor: `${colour}` }}>
+      <div className="container">
+        <div className="row">
+          {language == 'English' &&  <h1 style={{textAlign:'center',fontFamily:'cursive',fontWeight:'bold',marginTop:'10px'}}>{featureContent.condition}</h1>}
+         {language == 'Malayalam' && <h1 style={{textAlign:'center',fontFamily:'cursive',fontWeight:'bold',marginTop:'10px'}}>{malFeatureContent.condition}</h1>}
           {/* {error && <Alert variant="danger">{error}</Alert>} */}
-          <h1 style={{ textAlign: "center", fontSize: "50px" }}>
-            {day}-{month}-{year}
-          </h1>
+          
           {loading ? (
             <Loader />
           ) : (
             <>
-              <div className="col-md-9">
+            <SearchCondition latitude={latitude} longitude={longitude} />
+              <div className="col-md-9 py-5">
                 <Graphs data={data} latitude={latitude} longitude={longitude} />
               </div>
               <div className="col-md-3">
-                <CurrentCondition aqi={aqi}/>
+                <CurrentCondition aqi={aqi} />
               </div>
             </>
           )}

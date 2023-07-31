@@ -1,4 +1,13 @@
-export const solutionData:{id:number,point:string,description:string}[]=[{
+export const solutionData:{
+    title: string;
+    details: {
+      id: number;
+      point: string;
+      description: string;
+    }[];
+  }={
+    title:'Solution',
+    details:[{
     id:1,
     point:'Switch to Clean Energy',
     description:'Use renewable energy sources like solar and wind power to reduce dependence on fossil fuels, which emit harmful pollutants.'
@@ -41,4 +50,4 @@ export const solutionData:{id:number,point:string,description:string}[]=[{
     id:10,
     point:'Support Green Policies',
     description:'Advocate for policies that prioritize environmental protection and encourage sustainable practices.'
-}]
+}]}

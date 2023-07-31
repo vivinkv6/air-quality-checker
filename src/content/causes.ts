@@ -1,4 +1,13 @@
-export const causeData:{id:number,point:string,description:string}[]=[{
+export const causeData:{
+    title: string;
+    details: {
+      id: number;
+      point: string;
+      description: string;
+    }[];
+  }={
+    title:'Causes',
+   details:[{
     id:1,
     point:'Vehicle Emissions',
     description:'Exhaust from cars, trucks, and motorcycles releases harmful pollutants like nitrogen oxides and particulate matter.'
@@ -41,4 +50,4 @@ export const causeData:{id:number,point:string,description:string}[]=[{
     id:10,
     point:'Weather Conditions',
     description:'Certain weather patterns can trap pollutants close to the ground, leading to smog and poor air quality.'
-}]
+}]}
