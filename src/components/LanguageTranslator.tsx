@@ -27,7 +27,7 @@ function LanguageTranslator() {
         }}
         onClick={languageTranslate}
       />
-      <br />
+      {/* <br />
       <br />
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/800px-Speaker_Icon.svg.png"
@@ -39,7 +39,7 @@ function LanguageTranslator() {
           border: "3px solid black",
           padding: "10px",
         }}
-      />
+      /> */}
     </div>
   );
 }
