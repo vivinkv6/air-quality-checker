@@ -6,7 +6,7 @@ export const malSolutionData:{
       description: string;
     }[];
   }={
-    title:'വായു മലിനീകരണത്തിനെതിരായ പരിഹാരങ്ങൾ:',
+    title:'വായു മലിനീകരണത്തിന്റെ പരിഹാരങ്ങൾ:',
     details:[{
     id:1,
     point:'ക്ലീൻ എനർജിയിലേക്ക് മാറുക',
