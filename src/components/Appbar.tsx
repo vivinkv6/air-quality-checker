@@ -3,12 +3,23 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import { NavbarContent } from "../content/NavbarContent";
+import LanguageTranslator from "./LanguageTranslator";
 
 function Appbar() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="success" data-bs-theme="dark">
       <Container>
-      <h1 style={{fontWeight:'bold',fontFamily:'fantasy',fontSize:'30px',margin:'10px',color:'rgba(26, 38, 21, 0.68)'}}>AIR CHECKER</h1>
+        <h1
+          style={{
+            fontWeight: "bold",
+            fontFamily: "fantasy",
+            fontSize: "30px",
+            margin: "10px",
+            color: "rgba(26, 38, 21, 0.68)",
+          }}
+        >
+          AIR CHECKER
+        </h1>
         <Navbar.Brand>
           <Link to="/">
             <img
@@ -18,12 +29,9 @@ function Appbar() {
               className="d-inline-block align-top rounded-circle"
               alt="logo"
             />
-         
           </Link>
-          
-          
         </Navbar.Brand>
-       
+
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           {NavbarContent.map((value) => {
@@ -45,6 +53,10 @@ function Appbar() {
               </div>
             );
           })}
+
+          <Navbar.Collapse className="justify-content-end">
+            <LanguageTranslator />
+          </Navbar.Collapse>
         </Navbar.Collapse>
       </Container>
     </Navbar>

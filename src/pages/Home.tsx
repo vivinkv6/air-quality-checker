@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 import AirQuality from '../components/AirQuality'
 import Slider from '../components/Slider'
 import Introduction from '../components/Introduction'
-import LanguageTranslator from '../components/LanguageTranslator'
 
 
 function Home() {
@@ -11,7 +10,6 @@ function Home() {
 
   return (
     <>
-    <LanguageTranslator/>
     <Slider/>
     <div style={{marginTop:'5rem'}}>
     <Introduction/>

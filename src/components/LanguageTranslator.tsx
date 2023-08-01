@@ -14,16 +14,14 @@ function LanguageTranslator() {
   };
 
   return (
-    <div style={{ position: "fixed", top: "50%", right: "10%" }}>
+    <div >
       <img
         src="https://w7.pngwing.com/pngs/895/863/png-transparent-translation-google-translate-computer-icons-microsoft-translator-android-language-blue-english-text-thumbnail.png"
         alt="Language Translator"
         style={{
           borderRadius: "50%",
-          height: "80px",
-          width: "80px",
-          border: "3px solid black",
-          padding: "10px",
+          height: "50px",
+          width: "50px",
         }}
         onClick={languageTranslate}
       />
