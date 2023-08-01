@@ -8,6 +8,7 @@ function Appbar() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="success" data-bs-theme="dark">
       <Container>
+      <h1 style={{fontWeight:'bold',fontFamily:'fantasy',fontSize:'30px',margin:'10px',color:'rgba(26, 38, 21, 0.68)'}}>AIR CHECKER</h1>
         <Navbar.Brand>
           <Link to="/">
             <img
@@ -17,8 +18,12 @@ function Appbar() {
               className="d-inline-block align-top rounded-circle"
               alt="logo"
             />
+         
           </Link>
+          
+          
         </Navbar.Brand>
+       
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           {NavbarContent.map((value) => {
